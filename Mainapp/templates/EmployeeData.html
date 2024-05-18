@@ -1,0 +1,67 @@
+{% extends "index.html" %}
+
+
+{% block title %}
+
+<title>Worker | Profile | Skillzo</title>
+
+{% endblock  %}
+
+
+{% block content %}
+
+<div style="margin-top: 5%;" class="container">
+    <div class="table-responsive">
+        <table style="color: black;" class="table table-bordered table-striped table-hover">
+            <tr>
+                <th>Worker Name</th>
+                <td>{{pro.name}}</td>
+            </tr>
+
+            <tr>
+                <th>Worker Work Category</th>
+                <td>{{pro.category_w}}</td>
+            </tr>
+
+            <tr>
+                <th>Worker Phone Number</th>
+                <td>{{pro.phone}}</td>
+            </tr>
+
+            {% if pro.email %}
+
+            <tr>
+                <th>Worker Email Address</th>
+                <td>{{pro.email}}</td>
+            </tr>
+            {% else %}
+
+            <tr>
+                <th>Worker Email Address</th>
+                <td>Data  Empty And  Fill Out This Field </td>
+            </tr>
+
+            {% endif %}
+
+            <tr>
+                <th>Worker Location</th>
+                <td>{{pro.location}}</td>
+            </tr>
+
+            <tr>
+                <th>Worker Experience</th>
+                <td>{{pro.exprience}}</td>
+            </tr>
+           
+            <tr>
+                <th>Worker Work Description</th>
+                <td>{{pro.description}}</td>
+            </tr>
+            
+        </table>
+        <a class=" welcome-hero-btn  btn" style="margin-bottom: 25px; height: 30%;" href="/updateEmp/{{pro.id}}/">Update Data</a>
+    </div>
+</div>
+
+{% endblock  %}
+    

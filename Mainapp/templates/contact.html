@@ -1,0 +1,111 @@
+{% extends 'index.html' %}
+
+{% block tital %}
+
+<title>Contact | Skillzo</title>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="row">
+
+    <div style="margin-top: 100px;" class="section-header">
+        <h2>If Have Any Querie Contact To Our Team</h2>
+        <p></p>
+    </div><!--/.section-header-->
+
+
+    <div class="container-fluid">
+
+        <div style="margin-top: 2%;" class="col-md-6 col-12">
+
+            <div class="mapouter">
+                <div class="gmap_canvas"><iframe width="600" height="600" id="gmap_canvas"
+                        src="https://maps.google.com/maps?q=noida%20sector%2063&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                        href="https://embedgooglemap.net/124/"></a><br>
+                    <style>
+                        .mapouter {
+                            position: relative;
+                            text-align: right;
+                            height: 600px;
+                            width: 600px;
+                        }
+                    </style><a href="https://www.embedgooglemap.net"></a>
+                    <style>
+                        .gmap_canvas {
+                            overflow: hidden;
+                            background: none !important;
+                            height: 600px;
+                            width: 600px;
+                        }
+                    </style>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-6 col-12">
+
+            {% for mess in messages %}
+
+            <div style="color:#000; font-size: 30px; border-radius: 10px;  margin-top: 30px; "
+                class="alert  alert-success     subscribe-title text-center {{ message.tags }}" role="alert">
+
+                {{mess}}
+
+                <button type="button" class=" btn-close" data-bs-dismiss="alert " aria-label="Close"></button>
+            </div>
+
+            {% endfor %}
+
+
+            <form class="card-form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="input">
+                    <input type="text" name="name" class="input-field" placeholder="Enter  Full Name" required />
+                    <label class="input-label">Enter Full name *</label>
+                </div>
+
+
+
+                <div class="input">
+                    <input type="text" name="phone" class="input-field" placeholder="Enter Phone Number" required />
+                    <label class="input-label">Enter Contact Number *</label>
+                </div>
+
+                <div class="input">
+                    <input type="text" class="input-field" name="email" placeholder="Enter Your Email Address"
+                        required />
+                    <label class="input-label">Enter Email Address *</label>
+                </div>
+
+                <div class="input">
+                    <input type="text" class="input-field" name="subject" placeholder="Enter Your Subject" required />
+                    <label class="input-label">Subject *</label>
+                </div>
+
+
+                <div class="input">
+                    <textarea type="text" class="input-field" name="message"
+                        placeholder="Enter Your Message For Our Team" cols="20" rows="5" required></textarea>
+
+                    <label class="input-label">Your Message</label>
+                </div>
+
+                <div class="action">
+                    <button type="submit" class="action-button">Get started</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

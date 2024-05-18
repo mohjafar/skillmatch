@@ -1,0 +1,142 @@
+{% extends 'index.html' %}
+
+
+{% block tital %}
+<title>Profile | Skillzo</title>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+{% for mess in messages %}
+
+<div style="color:#000; font-size: 30px; border-radius: 10px;  margin-top: 30px; " class="alert  alert-success     subscribe-title text-center {{ message.tags }}" role="alert">
+   
+   {{mess}}
+    
+    <button type="button" class=" btn-close" data-bs-dismiss="alert " aria-label="Close"></button>
+</div>
+
+
+
+{% endfor %}
+
+
+
+
+
+<!-- <div style="color:#000; font-size: 30px;" class="alert subscribe-title text-center {{ message.tags }}"  role="alert">
+
+    {% for ser in service %}
+    <hr class="rounded" style="border: solid 5px ; color: black;  border-radius: 10px; "><h1>Buyer Username</h1> {{ser.username}}
+    <br>
+    <hr class="rounded" style="border: solid 5px ; color: black;  border-radius: 10px; ">  <h3>Service Data</h3>  {{ser.date}}
+    <br>
+    <hr class="rounded" style="border: solid 5px ; color: black;  border-radius: 10px; ">  <h3>Service Time</h3> {{ser.time}}
+    <br>
+    <hr class="rounded" style="border: solid 5px ; color: black;  border-radius: 10px; "> <h3>Service Type</h3>{{ser.service}}
+    {% endfor %}
+
+
+</div> -->
+
+
+<div class="table table-responsive">
+    <table class="table table-bordered table-hover table-striped" style="color:#000;margin-top: 30px; border-radius: 10px;">
+
+        {% for ser in service %}
+
+        
+
+        <tr>
+            <th>Booking Date</th>
+            <td>{{ser.date}}</td>
+        </tr>
+
+        <tr>
+            <th>Booking Time</th>
+            <td>{{ser.time}}</td>
+        </tr>
+
+
+        <tr>
+            <th>Booking Category</th>
+            <td>{{ser.service}}</td>
+        </tr>
+        
+
+        <tr>
+            <th><br></th>
+            
+            <td><br></td>
+
+        </tr>
+
+        <tr>
+
+            {% if ser.cancell  %}
+
+            <th>Status</th>
+            <td>Complete</td>
+
+            {% else %}
+
+            <th>Status</th>
+            <td>Pending</td>
+
+            {% endif %}
+                
+        </tr>
+        <tr>
+            <td><a class=" welcome-hero-btn  btn" style="margin-bottom: 25px; height: 30%;" href="/deleteservice/{{ser.id}}/">Cancell Service</a></td>
+        </tr>
+
+
+        <tr>
+            <th><br></th>
+            
+            <td><br></td>
+
+        </tr>
+
+       
+
+
+        <tr>
+
+            <style>
+                /* CSS code */
+                .text-container {
+                    margin-top: 30px;
+                    /* Adding margin-top of 30 pixels */
+                }
+            </style>
+            <!-- <td><a style="width: 45%;margin-top: 30px; height:60px; color:black; background:lightblue; "
+                    class="btn text-container" href="/work-complete/">Click Here If is Completed</a></td><br>
+ -->
+
+
+                    <td><br></td>
+
+                </tr>
+
+                <tr>
+                    <th><br></th>
+                    <td><br></td>
+                </tr>
+
+        {% endfor %}
+
+
+
+    </table>
+    
+
+</div>
+
+
+{% endblock %}

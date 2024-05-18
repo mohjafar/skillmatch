@@ -1,0 +1,72 @@
+{% extends 'index.html' %}
+
+
+{% block tital %}
+<title>Signup | Skillzo</title>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<!-- code here -->
+
+
+       
+<div class="card">
+    {% if messages %}
+    {% for mess in messages %}
+    <div class="alert {{ message.tags }}"  role="alert">
+        {{mess}}
+    </div>
+
+
+    {% endfor %}
+    {% endif %}
+    <div class="card-image">
+        <h2 class="card-heading">
+            Get started
+            <small>Let us Update your previous Details</small>
+        </h2>
+    </div>
+    <form class="card-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="input">
+            <input type="file" name="pic" class="input-field" placeholder="Select Your Profile Pic"  required  >
+            <label class="input-label">Profile Picture *</label>
+        </div>
+        
+
+        <div class="input">
+            <input type="text" name="name" class="input-field" placeholder="Enter  Full Name" value="{{buyer.name}}" required >
+            <label class="input-label">Enter Full name *</label>
+        </div>
+
+
+        <div class="input">
+            <input type="text" class="input-field" name="phone" placeholder="Enter Phone Number" value="{{buyer.phone}}" required />
+            <label class="input-label">Enter Your Updated Phone Number  *</label>
+        </div>
+
+        <div class="input">
+            <input type="text" class="input-field" name="email" placeholder="Enter Your Email " value="{{buyer.email}}" required />
+            <label class="input-label">Enter Your Updated Email Address  *</label>
+        </div>
+
+        
+
+        <div class="action">
+            <button type="submit" class="action-button">Get started</button>
+        </div>
+    </form>
+    <div class="card-info">
+        <p>By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
+    </div>
+</div>
+
+
+
+{% endblock %}

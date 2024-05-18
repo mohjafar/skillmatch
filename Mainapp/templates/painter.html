@@ -1,0 +1,153 @@
+{% extends "index.html" %}
+{% load static %}
+
+
+{% block title %}
+
+<title>All | Painter</title>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+<section id="works" class="works">
+    <div class="container">
+        <div style="margin-top: 60px;" class="section-header">
+            <h2>All Plumber Category</h2>
+            <p>Learn More about inside of this page</p>
+        </div><!--/.section-header-->
+
+        <!--blog start -->
+        <section id="blog" class="blog">
+            <div class="container">
+                <div class="section-header">
+                    <h2>news and articles</h2>
+                    <p>Always upto date with our latest News and Articles </p>
+                </div><!--/.section-header-->
+                <div class="blog-content">
+
+
+
+                    <div class="row">
+                        {% for i in data %}
+                        <div class="col-md-4 col-sm-6">
+                           
+                                <div class="single-blog-item">
+                                    <div  class="imgtop">
+                                        <img  src="{{i.pic1.url}}" alt="blog image">
+                                    </div>
+                                    <div class="single-blog-item-txt single-explore-txt bg-theme-1">
+                                        <h2><a href="/EmployeeData/{{i.id}}/">{{i.name}}</a></h2>
+                                        <a >{{i.category_w}}</a>   <br><a> Experience {{i.exprience}}</a>
+                                        <p>
+                                            Easy Way To Contect Your Desired Person Like Plumber ,Carpenter ,Mechenic etc.
+                                        
+                                        </p>
+
+                                        <a class="btn1 welcome-hero-btn  btn" style="height: 30%;"
+                                        href="/service/{{i.id}}/">Book Service</a>
+                                        
+                                    
+
+                                    </div>
+                                </div>
+                           
+                        </div>
+                        <!-- <div class="col-md-4 col-sm-6">
+                            <div class="single-blog-item">
+                                <div class="single-blog-item-img">
+                                    <img src="{% static 'assets/images/blog/b2.jpg' %}" alt="blog image">
+                                </div>
+                                <div class="single-blog-item-txt">
+                                    <h2><a href="#">How to find your Desired Place more quickly</a></h2>
+                                    <h4>posted <span>by</span> <a href="#">admin</a> march 2018</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod
+                                        tempore
+                                        incididunt ut labore et dolore magna.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="single-blog-item">
+                                <div class="single-blog-item-img">
+                                    <img src="{% static 'assets/images/blog/b3.jpg' %}" alt="blog image">
+                                </div>
+                                <div class="single-blog-item-txt">
+                                    <h2><a href="#">How to find your Desired Place more quickly</a></h2>
+                                    <h4>posted <span>by</span> <a href="#">admin</a> march 2018</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod
+                                        tempore
+                                        incididunt ut labore et dolore magna.
+                                    </p>
+                                </div>
+                            </div>
+                        </div> -->
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div><!--/.container-->
+
+        </section><!--/.blog-->
+
+        <div class="works-content">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-how-works">
+                        <div class="single-how-works-icon">
+                            <i class="flaticon-lightbulb-idea"></i>
+                        </div>
+                        <h2><a href="#">choose <span> what to</span> do</a></h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt
+                            ut laboremagna aliqua.
+                        </p>
+                        <button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
+                            read more
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-how-works">
+                        <div class="single-how-works-icon">
+                            <i class="flaticon-networking"></i>
+                        </div>
+                        <h2><a href="#">find <span> what you want</span></a></h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt
+                            ut laboremagna aliqua.
+                        </p>
+                        <button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
+                            read more
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-how-works">
+                        <div class="single-how-works-icon">
+                            <i class="flaticon-location-on-road"></i>
+                        </div>
+                        <h2><a href="#">explore <span> amazing</span> place</a></h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consecte adipisicing elit, sed do eiusmod tempor incididunt
+                            ut laboremagna aliqua.
+                        </p>
+                        <button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
+                            read more
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--/.container-->
+
+</section><!--/.works-->
+
+{% endblock %}

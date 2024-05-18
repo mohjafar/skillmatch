@@ -1,0 +1,153 @@
+{% extends 'index.html' %}
+
+
+{% block tital %}
+<title>Worker Job | Skillmatch</title>
+
+{% endblock %}
+
+
+{% block content %}
+
+<!-- {% for mess in messages %}
+
+<div style="color:#000; font-size: 30px; border-radius: 10px;  margin-top: 30px; " class="alert  alert-success     subscribe-title text-center {{ message.tags }}" role="alert">
+   
+   {{mess}}
+    
+    <button type="button" class=" btn-close" data-bs-dismiss="alert " aria-label="Close"></button>
+</div>
+
+{% endfor %} -->
+
+<div class="table table-responsive">
+    <table class="table table-bordered table-hover table-striped"
+        style="color:#000;margin-top: 30px; border-radius: 10px;">
+        <tr>
+            <th>Worker Name</th>
+            <td>{{worker.name}}</td>
+        </tr>
+
+        <tr>
+            <th>Your Work Category</th>
+            <td>{{worker.category_w}}</td>
+        </tr>
+
+
+        <tr>
+            <th><br></th>
+
+            <td><br></td>
+
+        </tr>
+
+        <tr>
+            <table class="table table-bordered table-hover table-striped"
+                style="color:#000;margin-top: 30px; border-radius: 10px;">
+
+                {% for i in services %}
+
+
+                <tr>
+                    <th>Booking Date</th>
+                    <td>{{i.date}}</td>
+                </tr>
+
+                <tr>
+                    <th>Booking Time</th>
+                    <td>{{i.time}}</td>
+                </tr>
+
+
+                <tr>
+                    <th>Client Phone Number</th>
+                    <td>{{i.buyerphone}}</td>
+                </tr>
+
+
+                <tr>
+                    <th>Client Name</th>
+                    <td>{{i.username}}</td>
+                </tr>
+
+                <tr>
+                    <th>Service Type</th>
+                    <td>{{i.service}}</td>
+                </tr>
+
+
+                <tr>
+                    <br>
+                </tr>
+
+
+                {% if i.is_cancell %}
+                <tr>
+                    <th>Status</th>
+                    <td>Completed</td>
+                </tr>
+
+
+                {% else %}
+
+                <tr>
+                    <th>Status</th>
+                    <td>Pending</td>
+                </tr>
+
+                <tr>
+                    <th><br></th>
+                </tr>
+
+
+                {% endif %}
+
+
+
+
+
+
+        </tr>
+
+        <tr>
+
+            <style>
+                /* CSS code */
+                .text-container {
+                    margin-top: 30px;
+                    /* Adding margin-top of 30 pixels */
+                }
+            </style>
+            <!-- <td><a style="width: 45%;margin-top: 30px; height:60px; color:black; background:lightblue; "
+                    class="btn text-container" href="/work-complete/">Click Here If is Completed</a></td><br>
+ -->
+
+
+                    <td><br></td>
+
+                </tr>
+
+                <tr>
+                    <th><br></th>
+                    <td><br></td>
+                </tr>
+
+        {% endfor %}
+
+
+
+    </table>
+
+
+    </tr>
+
+
+
+    </table>
+
+
+</div>
+
+
+
+{% endblock %}

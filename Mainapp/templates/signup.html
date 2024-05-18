@@ -1,0 +1,83 @@
+{% extends 'index.html' %}
+
+
+{% block tital %}
+<title>Signup | Skillzo</title>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<!-- code here -->
+
+
+       
+<div class="card">
+    {% if messages %}
+    {% for mess in messages %}
+    <div class="alert {{ message.tags }}"  role="alert">
+        {{mess}}
+    </div>
+
+
+    {% endfor %}
+    {% endif %}
+    <div class="card-image">
+        <h2 class="card-heading">
+            Get started
+            <small>Let us create your account</small>
+        </h2>
+    </div>
+    <form class="card-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="input">
+            <input type="file" name="pic" class="input-field" required/>
+            <label class="input-label">choose Your Profile Pic </label>
+        </div>
+
+        <div class="input">
+            <input type="text" name="name" class="input-field" placeholder="Enter  Full Name" required />
+            <label class="input-label">Enter Full name *</label>
+        </div>
+
+        <div class="input">
+            <input type="text" name="username" class="input-field" placeholder="Enter Username(Unique)" required />
+            <label class="input-label">Enter Username *</label>
+        </div>
+
+        <div class="input">
+            <input type="text" name="phone" class="input-field" placeholder="Enter Phone Number" required />
+            <label class="input-label">Enter Contact Number *</label>
+        </div>
+
+        <div class="input">
+            <input type="text" class="input-field" name="email" placeholder="Enter Your Email Address" required />
+            <label class="input-label">Enter Email Address *</label>
+        </div>
+        <div class="input">
+            <input type="password" name="password" class="input-field" required />
+            <label class="input-label">Password *</label>
+        </div>
+
+
+
+        <div class="input">
+            <input type="password" name="cpassword" class="input-field" required />
+            <label class="input-label">Confirm Password *</label>
+        </div>
+
+        <div class="action">
+            <button type="submit" class="action-button">Get started</button>
+        </div>
+    </form>
+    <div class="card-info">
+        <p>By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
+    </div>
+</div>
+
+
+
+{% endblock %}

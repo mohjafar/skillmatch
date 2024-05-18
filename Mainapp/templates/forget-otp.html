@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+
+
+{% block tital %}
+<title>OTP | Skillzo</title>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="card">
+    <div class="card-image">
+        <h2 class="card-heading">
+            Enter OTP To Create Your New Password
+            <small> </small>
+        </h2>
+    </div>
+    <form class="card-form" method="post">
+        {% csrf_token %}
+       
+
+        <div class="input">
+            <input type="text" name="otp" class="input-field" placeholder="Enter OTP To Then Create The New Password" required />
+            <label class="input-label">Enter OTP *</label>
+        </div>
+
+   
+        
+        <div class="action">
+            <button type="submit" class="action-button">Enter OTP</button>
+        </div>
+    </form>
+  
+    <!-- <div class="card-info">
+        <p>By signing up you are agreeing to our <a href="/password/">Terms and Conditions</a></p>
+    </div> -->
+</div>
+
+{% endblock %}
+

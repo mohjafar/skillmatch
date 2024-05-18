@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+
+
+{% block tital %}
+<title>Username | Skillzo</title>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="card">
+    <div class="card-image">
+        <h2 class="card-heading">
+            Enter  Username To Get OTP.
+            <small> </small>
+        </h2>
+    </div>
+    <form class="card-form" method="POST" action="">
+        {% csrf_token %}
+       
+
+        <div class="input">
+            <input type="text" name="username" class="input-field" placeholder="Enter  Username" required />
+            <label class="input-label">Enter Username *</label>
+        </div>
+
+   
+        
+        <div class="action">
+            <button type="submit" class="action-button">Enter Username</button>
+        </div>
+    </form>
+  
+    <!-- <div class="card-info">
+        <p>By signing up you are agreeing to our <a href="/forget-otp/">Enter OTP</a></p>
+    </div> -->
+</div>
+
+{% endblock %}
+

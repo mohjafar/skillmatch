@@ -1,0 +1,72 @@
+{% extends "index.html" %}
+
+
+{% block title %}
+
+<title>Cart | Profile | Skillzo</title>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <h1 class="background text-center text-light rounded my-1"> Products Add On Your Card </h1>
+
+    <div class="table  table-responsive">
+        <table  class="background table table-hover table-striped table-bordered">
+            <tr>
+                <th >Product Image</th>
+                <th>Worker Name</th>
+
+                <th>Worker Category </th>
+                <th>Worker Phone</th>
+                
+                <th>Worker Description</th>
+                <th>Worker Location</th>
+                <th>Worker Experience</th>
+
+            </tr>
+
+
+            {% for i in cart %}
+            <tr>
+                <td><img src="{{i.pic}}" width="140px" height="100px" class="rounded" alt=""></td>
+                <td>{{i.name}}</td>
+                <td>{{i.category_w}} </td>
+                <td>{{i.phone}} </td>
+                <td>{{i.description}}</td>
+                <td>{{i.location}}</td>
+                <td>{{i.exprience}}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <!-- <div class="row">
+        <div class="col-md-6 col-12"></div>
+        <div class="col-md-6 col-12">
+            <table class="table table-bordered table-hover table-striped">
+                <tr>
+                    <th>Total Price </th>
+                    <td>{{total}}</td>
+                </tr>
+                <tr>
+                    <th>Shipping Charge</th>
+                    <td>{{shipping}}</td>
+                </tr>
+                {% if final %}
+                <tr>
+                    <th>Final Amount</th>
+                    <td>{{final}} &#8377;</td>
+                </tr>
+                {% endif %}
+
+
+
+            </table>
+
+        </div>
+    </div> -->
+</div>
+{% endblock %}
